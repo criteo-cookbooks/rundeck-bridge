@@ -3,15 +3,18 @@
 # Attributes: default
 #
 
-# Service user on bridge
+#<> Service user on bridge
 default['rundeck_bridge']['user']    = 'chef-rundeck'
 default['rundeck_bridge']['group']   = 'chef-rundeck'
+#<> Home of service user
 default['rundeck_bridge']['home']    = '/home/chef-rundeck'
 
 # Service set up
+#<> Location of chef-rundeck gem binary
 default['rundeck_bridge']['binary']  = '/opt/chef/embedded/bin/chef-rundeck'
-default['rundeck_bridge']['options'] = {
-  'host'           => '0.0.0.0',
-  'port'           => '9980',
-  'partial-search' => 'true',
-}
+#<> IP to bind the bridge to
+default['rundeck_bridge']['options']['host'] = '0.0.0.0'
+#<> Port the bridge listens to
+default['rundeck_bridge']['options']['port'] = '9980'
+#<> Lighten load on chef-server using partial search instead of classic search
+default['rundeck_bridge']['options']['partial-search'] = 'true'
