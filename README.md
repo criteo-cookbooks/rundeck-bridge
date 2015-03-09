@@ -22,13 +22,15 @@ Most of the config is still left to the user and has to be done in a wrapper coo
 
 # Attributes
 
-* `node['rundeck_bridge']['user']` - Service user on bridge. Defaults to `"chef-rundeck"`.
-* `node['rundeck_bridge']['group']` -  Defaults to `"chef-rundeck"`.
-* `node['rundeck_bridge']['home']` - Home of service user. Defaults to `"/home/chef-rundeck"`.
-* `node['rundeck_bridge']['binary']` - Location of chef-rundeck gem binary. Defaults to `"/opt/chef/embedded/bin/chef-rundeck"`.
-* `node['rundeck_bridge']['options']['host']` - IP to bind the bridge to. Defaults to `"0.0.0.0"`.
-* `node['rundeck_bridge']['options']['port']` - Port the bridge listens to. Defaults to `"9980"`.
-* `node['rundeck_bridge']['options']['partial-search']` - Lighten load on chef-server using partial search instead of classic search. Defaults to `"true"`.
+Name | Description | Default
+-----|-------------|--------
+* `node['rundeck_bridge']['user']` | Service user on bridge. |Defaults to `"chef-rundeck"`.
+* `node['rundeck_bridge']['group']` |  |Defaults to `"chef-rundeck"`.
+* `node['rundeck_bridge']['home']` | Home of service user. |Defaults to `"/home/chef-rundeck"`.
+* `node['rundeck_bridge']['binary']` | Location of chef-rundeck gem binary. |Defaults to `"/opt/chef/embedded/bin/chef-rundeck"`.
+* `node['rundeck_bridge']['options']['host']` | IP to bind the bridge to. |Defaults to `"0.0.0.0"`.
+* `node['rundeck_bridge']['options']['port']` | Port the bridge listens to. |Defaults to `"9980"`.
+* `node['rundeck_bridge']['options']['partial-search']` | Lighten load on chef-server using partial search instead of classic search. |Defaults to `"true"`.
 
 # Recipes
 
