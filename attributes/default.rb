@@ -18,5 +18,5 @@ default['rundeck_bridge']['options']['host'] = '0.0.0.0'
 default['rundeck_bridge']['options']['port'] = '9980'
 #<> Lighten load on chef-server using partial search instead of classic search
 default['rundeck_bridge']['options']['partial-search'] = 'true'
-#<> chef user that bridge connect with to chef server
+#<> Default username attribute for the node element in the generated resource xml
 default['rundeck_bridge']['options']['username'] = 'rundeck'
