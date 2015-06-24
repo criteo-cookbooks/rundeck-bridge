@@ -31,7 +31,7 @@ Name | Description | Default
 * `node['rundeck_bridge']['options']['host']` | IP to bind the bridge to. |Defaults to `"0.0.0.0"`.
 * `node['rundeck_bridge']['options']['port']` | Port the bridge listens to. |Defaults to `"9980"`.
 * `node['rundeck_bridge']['options']['partial-search']` | Lighten load on chef-server using partial search instead of classic search. |Defaults to `"true"`.
-* `node['rundeck_bridge']['options']['username']` | chef user that bridge connect with to chef server. |Defaults to `"rundeck"`.
+* `node['rundeck_bridge']['options']['username']` | Default username attribute for the node element in the generated resource xml. |Defaults to `"rundeck"`.
 
 # Recipes
 
