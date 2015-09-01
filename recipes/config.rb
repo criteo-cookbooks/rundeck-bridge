@@ -23,7 +23,7 @@ end
 directory node['rundeck_bridge']['home'] do
   owner     node['rundeck_bridge']['user']
   group     node['rundeck_bridge']['group']
-  mode      '00700'
+  mode      '00755'
   recursive true
 end
 
