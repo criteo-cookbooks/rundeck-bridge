@@ -37,4 +37,10 @@ default['rundeck_bridge']['poise_service']['options'] = {
     options:   node['rundeck_bridge']['options'],
     user:      node['rundeck_bridge']['user'],
   },
+  systemd: {
+    command:   cmd,
+    directory: node['rundeck_bridge']['home'],
+    options:   node['rundeck_bridge']['options'],
+    user:      node['rundeck_bridge']['user'],
+  }
 }
