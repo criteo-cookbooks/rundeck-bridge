@@ -23,24 +23,9 @@ default['rundeck_bridge']['options']['username'] = 'rundeck'
 
 
 # Service setup (Using 'poise')
-options = [ '/opt/chef/embedded/bin/chef-rundeck' ]
-node['rundeck_bridge']['options'].each do |key, value|
- options << "--#{key} #{value}"
-end
-
-cmd = options.join(' ')
-
 default['rundeck_bridge']['poise_service']['options'] = {
   upstart: {
-    command:   "#{cmd} 2>&1 > /home/chef-rundeck/server.log",
-    directory: node['rundeck_bridge']['home'],
-    options:   node['rundeck_bridge']['options'],
-    user:      node['rundeck_bridge']['user'],
   },
   systemd: {
-    command:   cmd,
-    directory: node['rundeck_bridge']['home'],
-    options:   node['rundeck_bridge']['options'],
-    user:      node['rundeck_bridge']['user'],
   }
 }
