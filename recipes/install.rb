@@ -18,4 +18,6 @@ directory node['rundeck_bridge']['home'] do
 end
 
 # Install chef-rundeck in chef as it requires chef
-chef_gem 'chef-rundeck'
+chef_gem 'chef-rundeck' do
+  compile_time false
+end
