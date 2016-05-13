@@ -17,6 +17,7 @@ Most of the config is still left to the user and has to be done in a wrapper coo
 ## Cookbooks:
 
 * chef-client
+* poise-service
 * rundeck-server (Suggested but not required)
 * rundeck-node (Suggested but not required)
 
@@ -35,7 +36,9 @@ Name | Description | Default
 
 # Recipes
 
+* rundeck-bridge::install
 * rundeck-bridge::config
+* rundeck-bridge::service
 * [rundeck-bridge::default](#rundeck-bridgedefault)
 
 ## rundeck-bridge::default

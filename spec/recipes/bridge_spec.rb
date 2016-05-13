@@ -16,12 +16,4 @@ describe 'rundeck-bridge' do
     expect(chef_run).to install_chef_gem('chef-rundeck')
   end
 
-  it 'configure service' do
-    expect(chef_run).to render_file('/etc/init/chef-rundeck.conf')
-      .with_content('"/opt/chef/embedded/bin/chef-rundeck" --host 0.0.0.0 --partial-search true --port 9980')
-  end
-
-  it 'start service' do
-    expect(chef_run).to enable_service('chef-rundeck')
-  end
 end

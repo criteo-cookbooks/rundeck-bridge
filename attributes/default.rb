@@ -20,3 +20,12 @@ default['rundeck_bridge']['options']['port'] = '9980'
 default['rundeck_bridge']['options']['partial-search'] = 'true'
 #<> Default username attribute for the node element in the generated resource xml
 default['rundeck_bridge']['options']['username'] = 'rundeck'
+
+
+# Service setup (Using 'poise')
+default['rundeck_bridge']['poise_service']['options'] = {
+  upstart: {
+  },
+  systemd: {
+  }
+}
