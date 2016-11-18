@@ -17,6 +17,14 @@ directory node['rundeck_bridge']['home'] do
   recursive true
 end
 
+# Install sinatra beta version
+# Required to avoid the following issue for Chef >= 12.14.60
+# https://github.com/Webtrends/rundeck/issues/100
+chef_gem 'sinatra' do
+  version '>= 2.0.0.beta2'
+  only_if { Chef::Version.new(Chef::VERSION) >= Chef::Version.new('12.14.60') }
+end
+
 # Install chef-rundeck in chef as it requires chef
 chef_gem 'chef-rundeck' do
   compile_time false
