@@ -6,7 +6,7 @@ source_url       'https://github.com/criteo-cookbooks/rundeck-bridge'
 license          'Apache License 2.0'
 description      'Installs chef-rundeck bridge and configure as needed'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '2.0.0'
+version          '2.0.1'
 supports         'centos'
 
 depends          'chef-client'
