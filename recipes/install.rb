@@ -26,6 +26,7 @@ chef_gem 'sinatra' do
 end
 
 # Install chef-rundeck in chef as it requires chef
-chef_gem 'chef-rundeck' do
+chef_gem node['rundeck_bridge']['gem']['name'] do
   compile_time false
+  version node['rundeck_bridge']['gem']['version']
 end

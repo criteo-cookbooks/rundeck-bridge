@@ -10,6 +10,8 @@ default['rundeck_bridge']['group']   = 'chef-rundeck'
 default['rundeck_bridge']['home']    = '/home/chef-rundeck'
 
 # Service set up
+default['rundeck_bridge']['gem']['name']  = 'chef-rundeck'
+default['rundeck_bridge']['gem']['version']  = nil
 #<> Location of chef-rundeck gem binary
 default['rundeck_bridge']['binary']  = '/opt/chef/embedded/bin/chef-rundeck'
 #<> IP to bind the bridge to
