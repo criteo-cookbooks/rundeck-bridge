@@ -8,19 +8,6 @@
 require 'spec_helper'
 
 describe 'rundeck-bridge::default' do
-  context 'When all attributes are default, on centos 6.7' do
-    let(:chef_run) do
-      runner = ChefSpec::ServerRunner.new(
-        platform: 'centos',
-        version:  '6.7'
-      )
-      runner.converge(described_recipe)
-    end
-
-    it 'converges successfully' do
-      expect { chef_run }.to_not raise_error
-    end
-  end
   context 'When all attributes are default, on centos 7.2.1511' do
     let(:chef_run) do
       runner = ChefSpec::ServerRunner.new(
@@ -32,6 +19,19 @@ describe 'rundeck-bridge::default' do
 
     it 'converges successfully' do
       expect { chef_run }.to_not raise_error
+    end
+
+    it 'configure chef-client' do
+      expect(chef_run).to render_file('/etc/chef/client.rb')
+    end
+
+    it 'bug workaround' do
+      expect(chef_run).to render_file('/etc/chef/client.d/chef-rundeck.rb')
+        .with_content('log_level :info')
+    end
+
+    it 'install gem' do
+      expect(chef_run).to install_chef_gem('chef-rundeck')
     end
   end
 end
