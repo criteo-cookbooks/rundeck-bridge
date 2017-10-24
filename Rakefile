@@ -23,4 +23,4 @@ task :test_ec2 do
   end
 end
 
-task default: [:foodcritic, :rspec, :test_ec2]
+task default: [:foodcritic, :rspec]
