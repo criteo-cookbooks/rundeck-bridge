@@ -10,7 +10,6 @@ version          '2.1.3'
 supports         'centos'
 
 depends          'chef-client'
-depends          'poise-service'
 
 suggests         'rundeck-server'
 suggests         'rundeck-node'

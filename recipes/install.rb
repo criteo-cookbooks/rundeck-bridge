@@ -3,8 +3,9 @@
 # Recipe:   install
 #
 
-# Poise will create the User/Group but not the 'home' directory
-poise_service_user node['rundeck_bridge']['user'] do
+group node['rundeck_bridge']['group']
+
+user node['rundeck_bridge']['user'] do
   home    node['rundeck_bridge']['home']
   group   node['rundeck_bridge']['group']
 end
@@ -28,5 +29,5 @@ end
 # Install chef-rundeck in chef as it requires chef
 chef_gem node['rundeck_bridge']['gem']['name'] do
   compile_time false
-  version node['rundeck_bridge']['gem']['version']
+  version node['rundeck_bridge']['gem']['version'] unless node['rundeck_bridge']['gem']['version'].nil?
 end

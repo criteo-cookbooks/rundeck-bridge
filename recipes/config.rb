@@ -12,5 +12,5 @@ file '/etc/chef/client.d/chef-rundeck.rb' do
   group   'root'
   mode    '0644'
   content 'log_level :info'
-  notifies :restart, 'poise_service[chef-rundeck]'
+  notifies :restart, 'systemd_unit[chef-rundeck.service]'
 end
